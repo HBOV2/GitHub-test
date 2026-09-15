@@ -1,4 +1,3 @@
-# GitHub-test
 from playwright.sync_api import sync_playwright
 
 def test_google_search():
@@ -16,6 +15,9 @@ def test_google_search():
         page.locator("textarea[name='q']").press("Enter")
 
         page.wait_for_timeout(3000)
+
+        # Capture d'écran des résultats
+        page.screenshot(path="google.png")
 
         assert "Playwright" in page.title()
 
