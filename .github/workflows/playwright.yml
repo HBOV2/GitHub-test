@@ -19,3 +19,9 @@ jobs:
       - run: playwright install
 
       - run: pytest
+
+      - name: Upload screenshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: google.png
